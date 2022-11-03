@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/docs.iml" filepath="$PROJECT_DIR$/.idea/modules/docs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filter-registry-api.iml" filepath="$PROJECT_DIR$/.idea/modules/filter-registry-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filter-registry-api-build.iml" filepath="$PROJECT_DIR$/.idea/modules/filter-registry-api-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gatling.iml" filepath="$PROJECT_DIR$/.idea/modules/gatling.iml" />
+    </modules>
+  </component>
+</project>

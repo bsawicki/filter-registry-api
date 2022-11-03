@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/bsawicki/git/filter-registry-api/app/v1/filter/FilterController.scala:84:65: value link is not a member of List[v1.filter.FilterResource][0m
+[0m[[0m[31merror[0m] [0m[0mdid you mean find, lift, or min?[0m
+[0m[[0m[31merror[0m] [0m[0m        Created(Json.toJson(post)).withHeaders(LOCATION -> post.link)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -1,0 +1,3 @@
+->         /v1/filters             v1.filter.FilterRouter
+->         /v1/bulk                v1.filter.BulkFilterRouter
+->         /v1/test                v1.filter.FilterRouter

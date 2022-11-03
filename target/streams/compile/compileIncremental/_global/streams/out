@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 35 products, 11 sources, 15 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/app/v1/filter/FilterActionBuilder.scala, ${BASE}/app/v1/filter/FilterId.scala, ${BASE}/target/scala-2.13/routes/main/router/Routes.scala, ${BASE}/app/v1/filter/FilterResourceHandler.scala, ${BASE}/app/ErrorHandler.scala, ${BASE}/app/Module.scala, ${BASE}/app/v1/filter/FilterRepository.scala, ${BASE}/app/RequestHandler.scala, ${BASE}/target/scala-2.13/routes/main/router/RoutesPrefix.scala, ${BASE}/app/v1/filter/FilterController.scala, ${BASE}/app/v1/filter/FilterRouter.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

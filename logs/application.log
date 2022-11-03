@@ -1,0 +1,883 @@
+2022-11-03 10:49:42,937 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - create: data = FilterData(2,memcached filter 2)
+2022-11-03 10:49:42,937 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-6 - create: data = FilterData(1,memcached filter 1)
+2022-11-03 10:49:43,069 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 10:49:43,086 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev) (no global state)
+2022-11-03 10:49:43,212 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:49:43,213 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - show: id = 1
+2022-11-03 10:49:43,224 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - get: id = 1
+2022-11-03 10:49:47,546 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:49:47,547 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - show: id = 2
+2022-11-03 10:49:47,550 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - get: id = 2
+2022-11-03 10:49:50,452 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:49:50,456 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - process: 
+2022-11-03 10:49:50,462 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - request: AnyContentAsJson({"id":"3","data":"posted"})
+2022-11-03 10:49:50,462 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - Map()
+2022-11-03 10:49:50,479 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - create: data = FilterData(3,posted)
+2022-11-03 10:49:53,272 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:49:53,272 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - show: id = 3
+2022-11-03 10:49:53,290 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - get: id = 3
+2022-11-03 10:49:55,731 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:49:55,731 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - show: id = 4
+2022-11-03 10:49:55,732 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-12 - get: id = 4
+2022-11-03 10:50:02,978 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 10:50:02,983 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - index: 
+2022-11-03 10:50:02,998 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-13 - list: 
+2022-11-03 11:16:06,591 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-7 - 
+
+! @7pfngj93a - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
+ found   : data.type (with underlying type v1.filter.FilterData)
+ required: Nothing]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:16:30,864 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-7 - 
+
+! @7pfngkj5l - Internal server error, for (GET) [/v1/filters] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
+ found   : data.type (with underlying type v1.filter.FilterData)
+ required: Nothing]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:17:55,157 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-13 - 
+
+! @7pfngpdo3 - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value id is not a member of v1.filter.FilterFormInput]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:18:11,266 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-7 - 
+
+! @7pfnh0bjg - Internal server error, for (GET) [/v1/filters] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value id is not a member of v1.filter.FilterFormInput]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:30:21,661 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - create: data = FilterData(1,memcached filter 2)
+2022-11-03 11:30:21,661 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(0,memcached filter 1)
+2022-11-03 11:30:21,696 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-15 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 11:30:21,701 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-15 - Application started (Dev) (no global state)
+2022-11-03 11:30:21,717 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 11:30:21,717 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 11:30:21,721 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - list: 
+2022-11-03 11:30:21,735 [ERROR] from ErrorHandler in application-akka.actor.default-dispatcher-7 - 
+
+! @7pfnig08o - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NoSuchElementException: None.get]]
+	at play.api.http.HttpErrorHandlerExceptions$.$anonfun$convertToPlayException$2(HttpErrorHandler.scala:381)
+	at scala.Option.map(Option.scala:242)
+	at play.api.http.HttpErrorHandlerExceptions$.convertToPlayException(HttpErrorHandler.scala:380)
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:373)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:264)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:436)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:428)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:63)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:100)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:100)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:49)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:48)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Caused by: java.util.NoSuchElementException: None.get
+	at scala.None$.get(Option.scala:627)
+	at scala.None$.get(Option.scala:626)
+	at v1.filter.FilterRepositoryImpl.$anonfun$list$3(FilterRepository.scala:91)
+	at v1.filter.FilterRepositoryImpl.$anonfun$list$3$adapted(FilterRepository.scala:88)
+	at scala.collection.immutable.Range.foreach(Range.scala:190)
+	at v1.filter.FilterRepositoryImpl.$anonfun$list$1(FilterRepository.scala:88)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:63)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:100)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:100)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-11-03 11:39:47,772 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-20 - 
+
+! @7pfnjm5fo - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value get is not a member of v1.filter.FilterData]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:39:57,368 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-20 - 
+
+! @7pfnjmjm8 - Internal server error, for (GET) [/v1/filters] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value get is not a member of v1.filter.FilterData]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:40:23,503 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-28 - 
+
+! @7pfnjo6d9 - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value link is not a member of v1.filter.FilterResource]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:40:31,714 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-29 - 
+
+! @7pfnjoihc - Internal server error, for (GET) [/v1/filters] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value link is not a member of v1.filter.FilterResource]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 11:44:45,282 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 11:44:45,288 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev) (no global state)
+2022-11-03 11:44:45,315 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 11:44:45,315 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 11:44:45,320 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - list: 
+2022-11-03 11:44:56,260 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 11:44:56,271 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - process: 
+2022-11-03 11:44:56,290 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - request: AnyContentAsJson({"data":"posted"})
+2022-11-03 11:44:56,306 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - Map()
+2022-11-03 11:44:56,327 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - create: data = FilterData(posted)
+2022-11-03 11:44:58,161 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 11:44:58,161 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - index: 
+2022-11-03 11:44:58,166 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - list: 
+2022-11-03 11:45:10,508 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 11:45:10,538 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - show: filter = posted
+2022-11-03 11:45:10,562 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - get: filter = posted
+2022-11-03 11:45:16,412 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 11:45:16,413 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - process: 
+2022-11-03 11:45:16,414 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - request: AnyContentAsJson({"data":"foobar"})
+2022-11-03 11:45:16,416 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - Map()
+2022-11-03 11:45:16,431 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-12 - create: data = FilterData(foobar)
+2022-11-03 11:45:20,592 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 11:45:20,593 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - show: filter = foobar
+2022-11-03 11:45:20,600 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-13 - get: filter = foobar
+2022-11-03 11:53:34,501 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 11:53:34,503 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - show: filter = posted
+2022-11-03 11:53:34,506 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-14 - get: filter = posted
+2022-11-03 11:53:37,229 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 11:53:37,230 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 11:53:37,249 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-15 - list: 
+2022-11-03 12:29:25,231 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 12:29:25,231 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 12:29:25,238 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-16 - list: 
+2022-11-03 12:29:25,392 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-6 - onClientError: statusCode = 404, uri = /favicon.ico, message = 
+2022-11-03 14:02:47,831 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:02:47,831 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:02:47,834 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-17 - list: 
+2022-11-03 14:02:55,087 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:02:55,088 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:02:55,138 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-18 - list: 
+2022-11-03 14:03:05,664 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:03:05,665 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - show: filter = foobar
+2022-11-03 14:03:05,673 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-20 - get: filter = foobar
+2022-11-03 14:03:30,428 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:03:30,429 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - process: 
+2022-11-03 14:03:30,430 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - request: AnyContentAsJson({"data":"arbitrary data"})
+2022-11-03 14:03:30,430 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - Map()
+2022-11-03 14:03:30,448 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-21 - create: data = FilterData(arbitrary data)
+2022-11-03 14:03:33,539 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:03:33,539 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:03:33,563 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-22 - list: 
+2022-11-03 14:06:05,858 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-19 - invokeBlock: 
+2022-11-03 14:06:05,864 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-19 - index: 
+2022-11-03 14:06:05,874 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-23 - list: 
+2022-11-03 14:21:55,729 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-47 - 
+
+! @7pfof3hpf - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value link is not a member of List[v1.filter.FilterResource]
+did you mean find, lift, or min?]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 14:22:13,227 [ERROR] from play.api.http.DevHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-51 - 
+
+! @7pfof4i0a - Internal server error, for (GET) [/v1/filters] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value link is not a member of List[v1.filter.FilterResource]
+did you mean find, lift, or min?]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:34)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.$anonfun$taskFailureHandler$8(PlayReload.scala:131)
+	at scala.Option.map(Option.scala:230)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:104)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:38)
+	at play.sbt.run.PlayReload$.$anonfun$compile$3(PlayReload.scala:156)
+	at scala.util.Either$LeftProjection.map(Either.scala:573)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:156)
+	at play.sbt.run.PlayRun$.$anonfun$playRunTask$4(PlayRun.scala:80)
+	at play.runsupport.Reloader.$anonfun$reload$1(Reloader.scala:496)
+	at play.runsupport.Reloader$$anon$1.run(Reloader.scala:57)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:63)
+	at play.runsupport.Reloader.reload(Reloader.scala:496)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:147)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:308)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:225)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1309)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:542)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:496)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:390)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:650)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:521)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:800)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:818)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:716)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:579)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:547)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+2022-11-03 14:24:56,181 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-47 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:24:56,187 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-47 - Application started (Dev) (no global state)
+2022-11-03 14:24:56,204 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 14:24:56,206 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - index: 
+2022-11-03 14:24:56,212 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-6 - list: 
+2022-11-03 14:25:01,866 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:25:01,872 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - process: 
+2022-11-03 14:25:01,880 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - request: AnyContentAsJson({"data":"arbitrary data"})
+2022-11-03 14:25:01,882 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - Map()
+2022-11-03 14:25:01,903 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(arbitrary data)
+2022-11-03 14:25:03,937 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:25:03,937 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:25:03,939 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - list: 
+2022-11-03 14:25:28,229 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:25:28,239 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - processBulk: 
+2022-11-03 14:25:28,242 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:25:28,242 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - Map()
+2022-11-03 14:25:28,247 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - create: data = FilterData(arbitrary data,arbitrary data 2)
+2022-11-03 14:25:32,328 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:25:32,332 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:25:32,348 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - list: 
+2022-11-03 14:26:10,029 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-47 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:26:10,035 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-47 - Application started (Dev) (no global state)
+2022-11-03 14:26:10,044 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:26:10,045 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:26:10,055 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - list: 
+2022-11-03 14:26:12,091 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-9 - invokeBlock: 
+2022-11-03 14:26:12,092 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-9 - process: 
+2022-11-03 14:26:12,100 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-9 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:26:12,108 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-9 - Map()
+2022-11-03 14:26:12,123 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - create: data = FilterData(arbitrary data,arbitrary data 2)
+2022-11-03 14:27:56,518 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-59 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:27:56,524 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-59 - Application started (Dev) (no global state)
+2022-11-03 14:27:56,538 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:27:56,538 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:27:56,544 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - list: 
+2022-11-03 14:27:59,015 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/filters/bulk, message = 
+2022-11-03 14:28:00,322 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:28:00,322 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:28:00,329 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - list: 
+2022-11-03 14:28:18,245 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/bulk, message = 
+2022-11-03 14:28:20,850 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:28:20,851 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:28:20,862 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - list: 
+2022-11-03 14:29:57,471 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-47 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:29:57,475 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-47 - Application started (Dev) (no global state)
+2022-11-03 14:29:57,486 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:29:57,486 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - process: 
+2022-11-03 14:29:57,488 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:29:57,492 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - Map()
+2022-11-03 14:29:57,496 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - create: data = FilterData(arbitrary data,arbitrary data 2)
+2022-11-03 14:30:55,904 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-6 - onClientError: statusCode = 404, uri = /v1/, message = 
+2022-11-03 14:30:59,959 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:30:59,965 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:30:59,972 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - list: 
+2022-11-03 14:34:28,535 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-58 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:34:28,544 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-58 - Application started (Dev) (no global state)
+2022-11-03 14:34:28,553 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/filters/, message = 
+2022-11-03 14:34:30,112 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/filters/, message = 
+2022-11-03 14:34:33,256 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/filters/bulk, message = 
+2022-11-03 14:34:34,926 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-7 - onClientError: statusCode = 404, uri = /v1/filters/, message = 
+2022-11-03 14:35:05,687 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-68 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:35:05,692 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-68 - Application started (Dev) (no global state)
+2022-11-03 14:35:05,709 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:35:05,710 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:35:05,715 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - list: 
+2022-11-03 14:35:18,290 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-69 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:35:18,295 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-69 - Application started (Dev) (no global state)
+2022-11-03 14:35:18,308 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:35:18,315 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - show: filter = 
+2022-11-03 14:35:18,319 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - get: filter = 
+2022-11-03 14:35:18,329 [ERROR] from ErrorHandler in application-akka.actor.default-dispatcher-6 - 
+
+! @7pfogn9b0 - Internal server error, for (GET) [/v1/filters/] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NoSuchElementException: None.get]]
+	at play.api.http.HttpErrorHandlerExceptions$.$anonfun$convertToPlayException$2(HttpErrorHandler.scala:381)
+	at scala.Option.map(Option.scala:242)
+	at play.api.http.HttpErrorHandlerExceptions$.convertToPlayException(HttpErrorHandler.scala:380)
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:373)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:264)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:436)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:428)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:63)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:100)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:94)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:100)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:49)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:48)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Caused by: java.util.NoSuchElementException: None.get
+	at scala.None$.get(Option.scala:627)
+	at scala.None$.get(Option.scala:626)
+	at v1.filter.FilterController.$anonfun$show$3(FilterController.scala:56)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 12 common frames omitted
+2022-11-03 14:35:22,749 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:35:22,764 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:35:22,776 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - list: 
+2022-11-03 14:36:18,143 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-58 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:36:18,146 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-58 - Application started (Dev) (no global state)
+2022-11-03 14:36:18,151 [DEBUG] from application.ErrorHandler in application-akka.actor.default-dispatcher-6 - onClientError: statusCode = 404, uri = /v1/filters/, message = 
+2022-11-03 14:36:37,280 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-58 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:36:37,288 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-58 - Application started (Dev) (no global state)
+2022-11-03 14:36:37,304 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:36:37,305 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 14:36:37,309 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - list: 
+2022-11-03 14:37:39,247 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-69 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:37:39,250 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-69 - Application started (Dev) (no global state)
+2022-11-03 14:37:39,261 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:37:39,262 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:37:39,265 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - list: 
+2022-11-03 14:37:53,836 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:37:53,840 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - processBulk: 
+2022-11-03 14:37:53,851 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:37:53,856 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - Map()
+2022-11-03 14:37:53,865 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - create: data = FilterData(arbitrary data,arbitrary data 2)
+2022-11-03 14:55:18,155 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-51 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:55:18,166 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-51 - Application started (Dev) (no global state)
+2022-11-03 14:55:18,192 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 14:55:18,193 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - index: 
+2022-11-03 14:55:18,200 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-6 - list: 
+2022-11-03 14:55:21,643 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 14:55:21,646 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - processBulk: 
+2022-11-03 14:55:21,650 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:55:21,652 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - Map()
+2022-11-03 14:55:21,656 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(arbitrary data)
+2022-11-03 14:55:21,656 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - create: data = FilterData(arbitrary data 2)
+2022-11-03 14:55:24,576 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-7 - invokeBlock: 
+2022-11-03 14:55:24,577 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-7 - index: 
+2022-11-03 14:55:24,580 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - list: 
+2022-11-03 14:59:26,581 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-73 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:59:26,590 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-73 - Application started (Dev) (no global state)
+2022-11-03 14:59:26,606 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 14:59:26,606 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - index: 
+2022-11-03 14:59:26,609 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - list: 
+2022-11-03 14:59:28,925 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 14:59:28,926 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - processBulk: 
+2022-11-03 14:59:28,928 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:59:28,933 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - 
+2022-11-03 14:59:28,936 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - Map()
+2022-11-03 14:59:28,942 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - create: data = FilterData(arbitrary data)
+2022-11-03 14:59:28,942 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-12 - create: data = FilterData(arbitrary data 2)
+2022-11-03 14:59:54,671 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-73 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 14:59:54,676 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-73 - Application started (Dev) (no global state)
+2022-11-03 14:59:54,683 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 14:59:54,684 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - processBulk: 
+2022-11-03 14:59:54,685 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 14:59:54,685 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - foo
+2022-11-03 14:59:54,685 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - Map()
+2022-11-03 14:59:54,696 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(arbitrary data 2)
+2022-11-03 14:59:54,696 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - create: data = FilterData(arbitrary data)
+2022-11-03 14:59:56,774 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-10 - invokeBlock: 
+2022-11-03 14:59:56,775 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-10 - index: 
+2022-11-03 14:59:56,779 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - list: 
+2022-11-03 15:04:30,865 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-80 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 15:04:30,867 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-80 - Application started (Dev) (no global state)
+2022-11-03 15:04:30,877 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 15:04:30,880 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - index: 
+2022-11-03 15:04:30,884 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-6 - list: 
+2022-11-03 15:04:32,560 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-5 - invokeBlock: 
+2022-11-03 15:04:32,563 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - processBulk: 
+2022-11-03 15:04:32,569 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 15:04:32,575 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-5 - Map()
+2022-11-03 15:04:32,579 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - create: data = FilterData(arbitrary data 2)
+2022-11-03 15:04:32,579 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(arbitrary data)
+2022-11-03 15:07:24,358 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-85 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 15:07:24,369 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-85 - Application started (Dev) (no global state)
+2022-11-03 15:07:24,390 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 15:07:24,391 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - processBulk: 
+2022-11-03 15:07:24,393 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 15:07:24,395 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - Map()
+2022-11-03 15:07:24,401 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-7 - create: data = FilterData(arbitrary data)
+2022-11-03 15:07:24,402 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-8 - create: data = FilterData(arbitrary data 2)
+2022-11-03 15:07:27,434 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-6 - invokeBlock: 
+2022-11-03 15:07:27,434 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-6 - index: 
+2022-11-03 15:07:27,440 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-11 - list: 
+2022-11-03 15:07:57,025 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-90 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-11-03 15:07:57,029 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-90 - Application started (Dev) (no global state)
+2022-11-03 15:07:57,041 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 15:07:57,043 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - processBulk: 
+2022-11-03 15:07:57,044 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - request: AnyContentAsJson({"data":"arbitrary data,arbitrary data 2"})
+2022-11-03 15:07:57,046 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - Map()
+2022-11-03 15:07:57,051 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-9 - create: data = FilterData(arbitrary data)
+2022-11-03 15:07:57,051 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-10 - create: data = FilterData(arbitrary data 2)
+2022-11-03 15:07:59,722 [TRACE] from v1.filter.FilterActionBuilder in application-akka.actor.default-dispatcher-8 - invokeBlock: 
+2022-11-03 15:07:59,729 [TRACE] from v1.filter.FilterController in application-akka.actor.default-dispatcher-8 - index: 
+2022-11-03 15:07:59,733 [TRACE] from v1.filter.FilterRepositoryImpl in application-repository.dispatcher-12 - list: 
