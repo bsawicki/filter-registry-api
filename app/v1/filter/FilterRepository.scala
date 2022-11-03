@@ -17,8 +17,8 @@ import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}
 
 import scala.concurrent.Future
 import scala.util.Try
-
 import java.util.concurrent.atomic.AtomicInteger
+import java.util.concurrent.locks.{ReadWriteLock, ReentrantReadWriteLock}
 
 final case class FilterData(data: String)
 
@@ -62,6 +62,7 @@ class FilterRepositoryImpl @Inject()()(implicit ec: PostExecutionContext)
 
   private val logger = Logger(this.getClass)
 
+  private val lock: ReadWriteLock = new ReentrantReadWriteLock()
   private var filterList = List[FilterData]()
 
 /*  implicit val cacheConfig = CacheConfig(
@@ -83,7 +84,12 @@ class FilterRepositoryImpl @Inject()()(implicit ec: PostExecutionContext)
       implicit mc: MarkerContext): Future[Iterable[FilterData]] = {
     Future {
       logger.trace(s"list: ")
-      filterList
+      lock.readLock().lock()
+      try {
+        filterList
+      } finally {
+        lock.readLock().unlock()
+      }
       /*var list : List[FilterData] = List()
       for (a <- 0 to atomicId.get()) {
         var foo = cache.get(a)
@@ -99,7 +105,12 @@ class FilterRepositoryImpl @Inject()()(implicit ec: PostExecutionContext)
       implicit mc: MarkerContext): Future[Option[FilterData]] = {
     Future {
       logger.trace(s"get: filter = $filter")
-      filterList.find(post => post.data == filter)
+      lock.readLock().lock()
+      try {
+        filterList.find(post => post.data == filter)
+      } finally {
+        lock.readLock().unlock()
+      }
       //cache.get(id)
     }
   }
@@ -107,7 +118,12 @@ class FilterRepositoryImpl @Inject()()(implicit ec: PostExecutionContext)
   def create(data: FilterData)(implicit mc: MarkerContext): Future[Unit] = {
     Future {
       logger.trace(s"create: data = $data")
-      filterList = filterList :+ data
+      lock.writeLock().lock()
+      try {
+        filterList = filterList :+ data
+      } finally {
+        lock.writeLock().unlock()
+      }
       //val filter = FilterData(data.id, data.data)
       //put(atomicId.getAndIncrement)(filter)
       //data.id
