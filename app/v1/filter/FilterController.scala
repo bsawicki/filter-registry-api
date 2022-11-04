@@ -64,7 +64,7 @@ class FilterController @Inject()(cc: FilterControllerComponents)(
 
     def success(input: FilterFormInput) = {
       filterResourceHandler.create(input).map { post =>
-        Created(Json.toJson(post)).withHeaders(LOCATION -> post.link)
+        Created(Json.toJson(post)).withHeaders(LOCATION -> post.link, ("Access-Control-Allow-Origin", "*"))
       }
     }
 
@@ -83,7 +83,7 @@ class FilterController @Inject()(cc: FilterControllerComponents)(
         //list.map(filter => {
           //Created(Json.toJson(filter)).withHeaders(LOCATION -> filter.link)
         //})
-        MultiStatus(Json.toJson(list))
+        MultiStatus(Json.toJson(list)).withHeaders(("Access-Control-Allow-Origin", "*"))
       }
     }
 
