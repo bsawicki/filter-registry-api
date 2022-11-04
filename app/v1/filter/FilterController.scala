@@ -32,6 +32,7 @@ class FilterController @Inject()(cc: FilterControllerComponents)(
   def index: Action[AnyContent] = FilterAction.async { implicit request =>
     logger.trace("index: ")
     filterResourceHandler.find.map { posts =>
+      logger.trace(s"filters:" + Json.prettyPrint(Json.toJson(posts)))
       Ok(Json.toJson(posts))
     }
   }
